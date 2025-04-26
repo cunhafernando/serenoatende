@@ -20,6 +20,87 @@
     <%# Includes all stylesheet files in app/assets/stylesheets %>
     <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
+    <style>
+        /* Estilos personalizados com a paleta SerenoAtende e banner */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #F9FAFB; /* Branco gelo */
+            color: #333333; /* Cinza profundo */
+        }
+        .hero {
+            background-image: url('/sereno_banner.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            padding: 150px 0; /* Aumentei o padding para mais espaço vertical */
+            text-align: center;
+            color: #333333; /* Garante que o texto inicial seja visível */
+            position: relative; /* Para sobrepor elementos se necessário */
+        }
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(168, 218, 211, 0.6); /* Verde-água suave com alguma transparência para legibilidade */
+            z-index: 1; /* Garante que a camada de cor fique atrás do texto */
+        }
+        .hero-content {
+            position: relative; /* Para que o conteúdo fique acima da camada de cor */
+            z-index: 2;
+        }
+        .hero-content h1, .hero-content p, .hero-content a {
+            color: #333333; /* Cinza profundo para o texto do banner */
+        }
+        .features {
+            padding: 60px 0;
+            background-color: #F9FAFB; /* Branco gelo */
+        }
+        .feature-item {
+            text-align: center;
+            padding: 30px;
+            border: 1px solid #DEE2E6; /* Cinza claro do Bootstrap */
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .pricing {
+            padding: 60px 0;
+            background-color: #D8CFF5; /* Lilás claro */
+            color: #333333; /* Cinza profundo */
+        }
+        .pricing .card {
+            border: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+        .pricing .card-title {
+            color: #6CA0DC; /* Azul serenidade */
+        }
+        .cta {
+            padding: 80px 0;
+            background-color: #6CA0DC; /* Azul serenidade */
+            color: white;
+            text-align: center;
+        }
+        .cta a {
+            color: white;
+            border: 2px solid white;
+        }
+        .bg-secondary-sereno {
+            background-color: #A8DAD3 !important; /* Verde-água suave para badges */
+            color: #333333 !important; /* Cinza profundo para texto nos badges */
+        }
+        .text-primary-sereno {
+            color: #6CA0DC !important; /* Azul serenidade para ícones e destaques */
+        }
+        .footer {
+            background-color: #333333; /* Cinza profundo */
+            color: #F9FAFB; /* Branco gelo */
+            padding: 30px 0;
+            text-align: center;
+        }
+    </style>
   </head>
 
   <body>
